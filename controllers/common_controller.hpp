@@ -39,7 +39,10 @@ class common_controller{
       itb.modify(itr,s,[&](auto &_){
         _.next_claim = now() + dritr->cooldown*3600;
         _.last_prize = amount;
-        _.total += amount;
+        if(_.total.amount == 0)
+          _.total = amount;
+        else
+          _.total += amount;
         _.last_random= r/100.0;
       });
       
