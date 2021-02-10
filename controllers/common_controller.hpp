@@ -14,7 +14,7 @@ class common_controller{
 
       attributes_table atrtb(marble_contract,serial);
       auto atitr = atrtb.find("stars"_n.value);
-      auto stars = atitr->points % 1000;
+      auto stars =(int) (atitr->points/1000);
       
       drops_table dtb(s,set_id);
       auto dritr = dtb.find(stars);
